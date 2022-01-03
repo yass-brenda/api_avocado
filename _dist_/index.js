@@ -20,15 +20,19 @@ window
                     // crear el titulo
                     const tittle = document.createElement('h2')
                     tittle.textContent = item.name;
+                    tittle.className = "text-lg";
                     // crear la imagen
                     const image = document.createElement('img')
+                    image.className ="h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6";
                     image.src = `${baseUrl}${item.image}`;
                     // crear el parrafo
                     const price = document.createElement('div')
+                    price.className ="text-center md:text-left";
                     price.textContent = item.price
 
                     // Contenedor para cada uno de los elementos
                     const container = document.createElement('div')
+                    container.className = "md:flex bg-white rounded-lg p-6 hover:bg-gray-300";
                     container.append(tittle,image,price)
 
                     todosItems.push(container)
