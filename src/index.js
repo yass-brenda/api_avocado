@@ -5,6 +5,14 @@
 
 const baseUrl = "https://platzi-avo.vercel.app";
 const appNode = document.querySelector('#app')
+appNode.addEventListener("click",(event) => {
+    // Delegando un evento
+    // Si el listener tiene como etiqueta un H2
+    if(event.target.nodeName === "H2"){
+        window.alert('Hola')
+    }
+
+} )
 
 // Intl
 //  1 . Da formato fechas
@@ -32,8 +40,9 @@ window
             responseJSON.data.forEach(item => {
                     // crear el titulo
                     const tittle = document.createElement('h2')
-                    tittle.textContent = item.name;
                     tittle.className = "text-lg";
+                    tittle.textContent = item.name;
+
 
                     // crear la imagen
                     const image = document.createElement('img')
@@ -42,12 +51,12 @@ window
 
                     // crear el parrafo
                     const price = document.createElement('div')
-                    price.className ="text-center md:text-left";
+                    price.className ="text-gray-600";
                     price.textContent = formatPrice(item.price);
 
                     // Contenedor para cada uno de los elementos
                     const container = document.createElement('div')
-                    container.className = "md:flex bg-white rounded-lg p-6 hover:bg-gray-300";
+                    container.className = "text-center md:text-left";
                     container.append(tittle,image,price)
 
                     todosItems.push(container)
